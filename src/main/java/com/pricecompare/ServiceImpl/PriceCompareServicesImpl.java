@@ -88,13 +88,13 @@ public class PriceCompareServicesImpl implements PriceCompareServices {
 						throw new GlobalException(ex.getMessage());
 					}
 				} else {
-					throw new NullPointerException("Invalid Response From AmazonPortal");
+					throw new GlobalException(amazonProductResponse.getMessage());
 				}
 			} else {
-				throw new NullPointerException("Invalid Response From FlipcartPortal");
+				throw new GlobalException(flipcartProductResponse.getMessage());
 			}
 		} else {
-			throw new NullPointerException("Invalid Response From ProductManufacturer");
+			throw new GlobalException(productManufacturerResponse.getMessage());
 		}
 	}
 
